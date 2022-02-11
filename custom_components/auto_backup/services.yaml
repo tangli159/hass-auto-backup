@@ -1,92 +1,92 @@
 backup_full:
-  name: Backup Full 完整备份
-  description: Create a full backup with optional exclusions. 创建带有可选排除项的完整备份。
+  name: 完整备份
+  description: 创建带有可选排除项的完整备份。
   fields:
     name:
-      name: Name 名称
-      description: Optional or it will be the current date and time. 备份名。可填。默认为当前日期和时间。
+      name: 名称
+      description: 备份名。可填。默认为当前日期和时间。
       example: "Automatic Backup {{ now().strftime('%Y-%m-%d') }}"
       selector:
         text:
     password:
-      name: Password 密码
-      description: Optional password to secure backup. 可填。用于保护备份的密码。
+      name: 密码
+      description: 可填。用于保护备份的密码。
       example: "1234"
       selector:
         text:
     keep_days:
-      name: Keep days 保留天数
-      description: The number of days to keep the backup. 可填。备份保留天数。
+      name: 保留天数
+      description: 可填。备份保留天数。
       example: "2"
       selector:
         number:
           min: 0
           max: 10000
           step: 0.01
-          unit_of_measurement: days 天
+          unit_of_measurement: 天
           mode: box
     exclude:
       name: 排除
-      description: Addons/Folders to exclude from the backup. 可填。需要从备份里排除的Addons加载项/文件夹。
+      description: 可填。需要从备份里排除的Addons加载项/文件夹
       example: '{"addons": ["MariaDB"], "folders": ["Local add-ons", "share"]}'
       default: {"addons": ["MariaDB"], "folders": ["Local add-ons", "share"]}
       selector:
         object:
     download_path:
-      name: Download path 下载路径
-      description: Download the backup to a location after creation. 可填。创建备份后下载到本地的路径。
+      name: 下载路径
+      description: 可填。创建备份后下载到本地的路径。
       example: /usb_drive
       advanced: true
       selector:
         text:
 
 backup_partial:
-  name: Backup Partial 部分备份
-  description: Create a partial backup. 创建部分备份。
+  name: 部分备份
+  description: 创建部分备份。
   fields:
     name:
-      name: Name 名称
-      description: Backup Name. 备份名。可填。默认为当前日期和时间。
+      name: 名称
+      description: 备份名。可填。默认为当前日期和时间。
       example: "Automatic Backup {{ now().strftime('%Y-%m-%d') }}"
       selector:
         text:
     addons:
-      name: Add-ons 加载项
-      description: List of addons to backup (name or slug). 可填。要备份的加载项列表 (名字或者slug)。
+      name: Add-ons加载项
+      description: 可填。要备份的加载项列表 (名字或者slug)。
       example: grafana, Configurator, core_mariadb
       selector:
         object:
     folders:
-      name: Folders 文件夹
-      description: List of folders to backup. 可填。要备份的文件夹列表。
+      name: 文件夹
+      description: 可填。要备份的文件夹列表。
       example: homeassistant, Share, Local add-ons, ssl, media
       selector:
         object:
     password:
-      name: Password 密码
-      description: Optional password to secure backup. 可填。用于保护备份的密码。
+      name: 密码
+      description: 可填。用于保护备份的密码。
       example: "1234"
       selector:
         text:
     keep_days:
-      name: Keep days 保留天数
-      description: The number of days to keep the backup. 可填。备份保留天数。
+      name: 保留天数
+      description: 可填。备份保留天数。
       example: "2"
       selector:
         number:
           min: 0
           max: 10000
           step: 0.01
-          unit_of_measurement: days 天
+          unit_of_measurement: 天
           mode: box
     download_path:
-      name: Download path 下载路径
-      description: Download the backup to a location after creation. 可填。创建备份后下载到本地的路径。
+      name: 下载路径
+      description: 可填。创建备份后下载到本地的路径。
       example: /usb_drive
       advanced: true
       selector:
         text:
 
 purge:
-  name: Purge 清除过期备份
-  description: Purge expired backups. 清除过期备份。
+  name: 清除过期备份
+  description: 清除过期备份。
