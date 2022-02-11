@@ -14,12 +14,12 @@ from .const import (
     DATA_AUTO_BACKUP,
 )
 
-ATTR_LAST_FAILURE = "last_failure"
-ATTR_PURGEABLE = "purgeable_backups"
-ATTR_MONITORED = "monitored_backups"
+ATTR_LAST_FAILURE = "上次失败"
+ATTR_PURGEABLE = "可清理备份数"
+ATTR_MONITORED = "检测备份数"
 
 DEFAULT_ICON = "mdi:package-variant-closed"
-DEFAULT_NAME = "Auto Backup"
+DEFAULT_NAME = "自动备份"
 
 
 async def async_setup_entry(
@@ -34,7 +34,7 @@ class AutoBackupSensor(Entity):
     _attr_name = DEFAULT_NAME
     _attr_unique_id = "sensor-auto-backup"
     _attr_icon = DEFAULT_ICON
-    _attr_unit_of_measurement = "pending backup(s)"
+    _attr_unit_of_measurement = "←正在进行中的备份"
     _attr_extra_state_attributes = {}
     _attr_state = None
 
